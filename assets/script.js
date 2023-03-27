@@ -70,6 +70,8 @@ const selectIndicator = (slideIndex) => {
   });
 };
 
+
+
 ////////  		Afficher les slides 		///////////
 
 const displaySlides = (numImage) => {
@@ -95,4 +97,14 @@ const displaySlides = (numImage) => {
 
 displayIndicator();
 displaySlides(currentSlideIndex);
+
+const indicators = document.querySelectorAll(".dot");
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+
+      currentSlideIndex  = index ;
+
+      displaySlides(currentSlideIndex);
+    })
+  });
 
